@@ -1,0 +1,581 @@
+@import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard-dynamic-subset.css');
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+* {
+    font-family: 'Pretendard';
+    src: url('./images/Pretendard-Thin.woff') format('woff');
+}
+
+body {
+    margin: 0;
+    background-color: rgb(230, 230, 230);
+}
+
+nav {
+    background-color: rgb(255, 255, 255);
+    box-shadow: 0px 5px 5px rgb(210, 210, 210);
+    height: 50px;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+.center, .center-form {
+    width: 1000px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 5px 5px 5px rgb(210, 210, 210);
+    box-sizing: border-box;
+    margin: 2em auto;
+    padding: 1.5em;
+}
+
+.center-form {
+    width: 500px;
+}
+
+nav .content {
+    width: 1000px;
+    display: flex;
+    margin: 0px auto;
+    height: 100%;
+}
+
+nav .content .logo {
+    flex-grow: 1;
+    color: rgb(0, 166, 255);
+}
+
+nav .content div {
+    display: inline-block;
+}
+
+nav .content div a {
+    color: black;
+    font-weight: 600;
+    margin: auto 0;
+}
+
+.logo a {
+    font-family: 'Poppins';
+    color: black;
+    font-weight: 1000;
+    font-size: 30px;
+}
+
+.sign-in, .sign-up {
+    float: right;
+    align-items: center;
+}
+
+.sign-up {
+    margin-left: 2em;
+}
+
+.sign-in a, .sign-up a {
+    position: relative;
+    top: 30%;
+}
+
+.sign-in img {
+    position: relative;
+    top: 30%;
+    height: 1.2em;
+    margin-right: 0.2em;
+    vertical-align: middle;
+}
+
+.type {
+    width: 100%;
+    border-bottom: 2px solid rgb(59, 59, 59);
+    margin-bottom: 0.5em;
+    padding: 0.5em;
+    box-sizing: border-box;
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.type .create {
+    padding: 0.3em 0.5em;
+    float: right;
+    vertical-align: middle;
+    font-size: 16px;
+    font-weight: 400;
+    background-color: white;
+    border: 1px solid rgb(210, 210, 210);
+    border-radius: 3px;
+}
+
+.type .create:hover {
+    background-color: rgb(240, 240, 240);
+}
+
+.type .create a {
+    vertical-align: middle;
+}
+
+.type .create img {
+    vertical-align: middle;
+    margin-right: 0.3em;
+    height: 1.2em;
+}
+
+.not-exist {
+    width: 100%;
+    box-sizing: border-box;
+    text-align: center;
+    color: gray;
+    padding: 0.8em 0;
+    font-weight: 600;
+}
+
+.list-option {
+    width: 100%;
+    box-sizing: border-box;
+    display: flex;
+    background-color: rgb(230, 230, 230);
+    margin-bottom: 0.7em;
+    padding: 0 0.1em;
+    border-radius: 5px;
+}
+
+.list-option .select {
+    background-color: white;
+}
+
+.list-option div {
+    width: 100%;
+    text-align: center;
+    background-color: rgb(240, 240, 240);
+    border: 1px solid rgb(201, 201, 201);
+    padding: 0.3em 0;
+    margin: 0.2em 0.1em;
+    border-radius: 5px;
+}
+
+.list-option div:not(.select):hover {
+    background-color: rgb(247, 247, 247);
+}
+
+.list-option span {
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.search {
+    display: flex;
+    width: 100%;
+    box-sizing: border-box;
+    margin-bottom: 0.8em;
+}
+
+.search .count {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 1em;
+    background-color: rgb(0, 153, 204);
+    color: white;
+    font-size: 15px;
+    font-weight: 600;
+    margin: 0.2em 0;
+    border-radius: 10em;
+}
+
+.search-input {
+    display: flex;
+    margin-left: auto;
+    border: 1px solid rgb(210, 210, 210);
+    border-radius: 10em;
+}
+
+.search-input input {
+    padding: 0.3em 0.8em;
+    padding-right: 0;
+    outline: none;
+    border-style: none;
+    border-radius: 10em;
+}
+
+.search-input button {
+    padding: 0.2em 0.3em;
+    border-style: none;
+    background: none;
+}
+
+.search-input button img {
+    height: 2em;
+    vertical-align: middle;
+}
+
+.book-list {
+    border: 1px solid rgb(201, 201, 201);
+    padding: 1em;
+    border-radius: 5px;
+    margin-bottom: 0.3em;
+}
+
+.book-list img:not(.lock, .lang img, .buttons img) {
+    height: 1.2em;
+    float: right;
+}
+
+.book-list .lock {
+    height: 0.8em;
+    margin-left: 0.3em;
+}
+
+.book-list > .title {
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 0.8em;
+}
+
+.center-form .type {
+    margin-bottom: 1em;
+    padding-left: 0;
+}
+
+form {
+    box-sizing: border-box;
+}
+
+form .form-error {
+    margin: 1em 0;
+    border: 2px solid rgb(255, 90, 90);
+    padding: 1em;
+    padding-bottom: 0.2em;
+    background-color: rgb(255, 200, 200);
+    border-radius: 5px;
+}
+
+.form-error .error {
+    display: flex;
+    font-size: 15px;
+    margin-bottom: 0.8em;
+}
+
+.form-error .error span {
+    font-weight: 600;
+}
+
+.form-error .error ul {
+    margin: 0;
+}
+
+.form-error .error li {
+    list-style: none;
+}
+
+.form-input .set {
+    margin-bottom: 1em;
+    font-size: 15px;
+    font-weight: 600;
+}
+
+.form-input .title strong {
+    color: red;
+}
+
+.value input, .value select {
+    font-size: 14px;
+    box-sizing: border-box;
+    width: 100%;
+    border: 2px solid rgb(210, 210, 210);
+    border-radius: 5px;
+    padding: 0.8em;
+    margin-top: 0.5em;
+}
+
+.word-input {
+    display: flex;
+    margin-bottom: 1em;
+    padding-bottom: 1em;
+    border-bottom: 1px solid rgb(240, 240, 240);
+}
+
+.word-input.top {
+    margin-top: 0.8em;
+    font-size: 18px;
+    font-weight: 600;
+    padding: 0.4em 0 0.3em 0;
+    border-top: 2px solid rgb(210, 210, 210);
+    border-bottom: 2px solid rgb(210, 210, 210);
+}
+
+.word-input.top .title {
+    vertical-align: middle;
+}
+
+.word-input.top .content {
+    margin-left: 4%;
+}
+
+.word-input.top .lang {
+    float: right;
+}
+
+.word-input.top .lang img {
+    height: 1.5em;
+    margin-right: 0.3em;
+    vertical-align: middle;
+}
+
+.word-input.top .lang span {
+    font-size: 15px;
+    font-weight: 400;
+}
+
+.word-input .num {
+    width: 3%;
+    font-size: 15px;
+    font-weight: 600;
+    margin: 0.5em 0.8em 0 0;
+    text-align: right;
+}
+
+.word-input .content {
+    width: 40%;
+    margin-right: 3em;
+}
+
+.word-input .mean {
+    width: 50%;
+}
+
+.word-input textarea {
+    font-size: 14px;
+    box-sizing: border-box;
+    width: 100%;
+    border: 1px solid rgb(200, 200, 200);
+    outline: none;
+    border-radius: 5px;
+    padding: 0.8em;
+    resize: none;
+}
+
+.word-input textarea:focus {
+    border: 1px solid black;
+}
+
+.form-buttons .save {
+    float: right;
+    padding: 0.6em 1.5em;
+    margin-right: 0.3em;
+    font-size: 14px;
+    font-weight: 600;
+    color: white;
+    background-color: rgb(0, 130, 236);
+    border-style: none;
+    border-radius: 10em;
+}
+
+.form-buttons button:not(.save) {
+    padding: 0.5em 1em 0.6em 1em;
+    margin-right: 0.3em;
+    font-size: 14px;
+    background-color: white;
+    border: 1px solid rgb(210, 210, 210);
+    border-radius: 3px;
+}
+
+.form-buttons button:not(.save):hover {
+    background-color: rgb(240, 240, 240)
+}
+
+.form-buttons img {
+    height: 1.2em;
+    vertical-align: middle;
+    margin-right: 0.3em;
+}
+
+.submit {
+    margin-top: 2em;
+    width: 100%;
+    text-align: center;
+}
+
+.submit button {
+    font-size: 16px;
+    font-weight: 600;
+    color: white;
+    width: 7.5em;
+    margin: 0 auto;
+    background-color: rgb(0, 130, 246);
+    border-style: none;
+    padding: 0.5em 0;
+    border-radius: 10em;
+}
+
+.title .lang {
+    display: inline-flex;
+    vertical-align: middle;
+    margin-right: 0.5em;
+}
+
+.lang .arrow {
+    vertical-align: middle;
+    height: 0.6em;
+    margin: auto 0.3em;
+    margin-left: 0.4em;
+}
+
+.lang img:not(.arrow) {
+    height: 1.5em;
+}
+
+.book-list p {
+    display: flex;
+}
+
+.book-list .sub {
+    display: flex;
+    font-size: 14px;
+}
+
+.book-list p .title {
+    font-weight: 600;
+}
+
+.book-list p .data {
+    color: gray;
+    font-weight: 300;
+}
+
+.book-list p {
+    margin: 0;
+    margin-right: 1.2em;
+}
+
+.book-list span {
+    margin-right: 0.5em;
+}
+
+.word-list {
+    width: 100%;
+    padding: 0.8em;
+    margin-bottom: 0.3em;
+    border: 1px solid rgb(201, 201, 201);
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+.word-list div {
+    display: inline-block;
+}
+
+.word-list .content {
+    width: 30%;
+    border-right: 1px solid rgb(201, 201, 201);
+}
+
+.word-list .mean {
+    width: 50%;
+    padding-left: 2em;
+}
+
+.word-list img {
+    height: 1.2em;
+    float: right;
+    margin-left: 0.8em;
+}
+
+.word-title {
+    background-color: rgb(240, 240, 240);
+    align-items: center;
+    display: flex;
+    padding: 0.5em 0.8em;
+    font-weight: 600;
+}
+
+.word-title span {
+    font-size: 18px;
+    flex-grow: 1;
+}
+
+.word-title select {
+    padding: 0.3em;
+    border-radius: 3px;
+    outline: 0 none;
+    float: right;
+}
+
+select option {
+    padding: 0.3em;
+}
+
+.not-word-exist {
+    text-align: center;
+}
+
+.book-list .buttons {
+    margin-top: 1.5em;
+}
+
+.book-list .buttons a {
+    padding: 0.5em 1em 0.6em 1em;
+    margin-right: 0.3em;
+    font-size: 14px;
+    border: 1px solid rgb(210, 210, 210);
+    border-radius: 3px;
+}
+
+.book-list .buttons a:hover {
+    background-color: rgb(240, 240, 240)
+}
+
+.book-list .buttons img {
+    height: 1.2em;
+    vertical-align: middle;
+    margin-right: 0.3em;
+    margin-bottom: 0.1em;
+}
+
+.page-bar {
+    display: flex;
+    justify-content: center;
+    margin-top: 1em;
+}
+
+.page-bar .page-item, .now-page {
+    width: 2em;
+    height: 2em;
+    font-weight: 600;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    border-radius: 50%;
+    margin-left: 0.3em;
+}
+
+.page-bar .page-item:hover {
+    background-color: rgb(250, 250, 250);
+}
+
+.page-bar .now-page {
+    background-color: rgb(50, 50, 50);
+}
+
+.page-bar .now-page a {
+    color: white;
+}
+
+
+.page-bar .prev-page, .next-page {
+    display: grid;
+    place-items: center;
+}
+
+.page-bar .prev-page {
+    margin-right: 0.4em;
+}
+
+.page-bar .next-page {
+    margin-left: 0.6em;
+}
+
+.page-bar img {
+    height: 0.8em;
+}

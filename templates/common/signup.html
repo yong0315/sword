@@ -1,0 +1,62 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="center-form">
+    <div class="type">
+        회원가입
+    </div>
+    <form method="post" action="{% url 'common:signup' %}">
+        {% csrf_token %}
+        {% include "form_errors.html" %}
+        <div class="form-input">
+            <div class="set">
+                <div class="title">
+                    <label for="username">
+                        아이디
+                        <strong>*</strong>
+                    </label>
+                </div>
+                <div class="value">
+                    <input type="text" class="form-control" name="username" id="username"
+                        placeholder="아이디를 입력해주세요." value="{{ form.username.value|default_if_none:'' }}">
+                </div>
+            </div>
+            <div class="set">
+                <div class="title">
+                    <label for="password1">
+                        비밀번호
+                        <strong>*</strong>
+                    </label>
+                </div>
+                <div class="value">
+                    <input type="password" class="form-control" name="password1" id="password1"
+                        placeholder="비밀번호를 입력해주세요." value="{{ form.password1.value|default_if_none:'' }}">
+                </div>
+            </div>
+            <div class="set">
+                <div class="title">
+                    <label for="password2">
+                        비밀번호 확인
+                        <strong>*</strong>
+                    </label>
+                </div>
+                <div class="value">
+                    <input type="password" class="form-control" name="password2" id="password2"
+                        placeholder="비밀번호를 다시 입력해주세요." value="{{ form.password2.value|default_if_none:'' }}">
+                </div>
+            </div>
+            <div class="set">
+                <div class="title">
+                    <label for="email">이메일</label>
+                </div>
+                <div class="value">
+                    <input type="text" class="form-control" name="email" id="email"
+                        placeholder="이메일 주소를 입력해주세요." value="{{ form.email.value|default_if_none:'' }}">
+                </div>
+            </div>
+        </div>
+        <div class="submit">
+            <button type="submit">생성하기</button>
+        </div>
+    </form>
+</div>
+{% endblock %}

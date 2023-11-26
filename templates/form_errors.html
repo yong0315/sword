@@ -1,0 +1,17 @@
+{% if form.errors %}
+<div class="form-error">
+    {% for field in form %}
+        {% if field.errors %}
+        <div class="error">
+            <span>{{ field.label }}</span>
+            {{ field.errors }}
+        </div>
+        {% endif %}
+    {% endfor %}
+    {% for error in form.non_field_errors %}
+    <div class="error">
+        <span>{{ error }}</span>
+    </div>
+    {% endfor %}
+</div>
+{% endif %}

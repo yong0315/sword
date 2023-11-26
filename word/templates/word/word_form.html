@@ -1,0 +1,104 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<div class="center">
+    <div class="type">
+        단어 편집
+    </div>
+    <div class="form-buttons">
+        <button onclick="InsertWord();">
+            <img src="{% static "image/add.png" %}">
+            단어 추가
+        </button>
+        <button onclick="DeleteWord();">
+            <img src="{% static "image/minus.png" %}">
+            단어 삭제
+        </button>
+        <button class="save" form="word" type="submit">저장하기</button>
+    </div>
+    <div class="word-input top">
+        <div class="content">
+            <span class="title">단어</span>
+            <div class="lang">
+                {% if voca_book.from_lang == 'ko-KR' %} <img src="{% static "image/korea.png" %}"> <span>한국어</span>
+                {% elif voca_book.from_lang == 'ja-JP' %} <img src="{% static "image/japan.png" %}"> <span>일본어</span>
+                {% elif voca_book.from_lang == 'zh-CN' %} <img src="{% static "image/china.png" %}"> <span>중국어</span>
+                {% elif voca_book.from_lang == 'en-US' %} <img src="{% static "image/usa.png" %}"> <span>영어</span>
+                {% elif voca_book.from_lang == 'es-ES' %} <img src="{% static "image/spain.png" %}"> <span>스페인어</span>
+                {% elif voca_book.from_lang == 'it-IT' %} <img src="{% static "image/italy.png" %}"> <span>이탈리아어</span>
+                {% elif voca_book.from_lang == 'fr-FR' %} <img src="{% static "image/france.png" %}"> <span>프랑스어</span>
+                {% elif voca_book.from_lang == 'de-DE' %} <img src="{% static "image/germany.png" %}"> <span>독일어</span>
+                {% elif voca_book.from_lang == 'ru-RU' %} <img src="{% static "image/russia.png" %}"> <span>러시아어</span>
+                {% elif voca_book.from_lang == 'ar-SA' %} <img src="{% static "image/saudi-arabia.png" %}"> <span>아랍어</span>
+                {% elif voca_book.from_lang == 'he-IL' %} <img src="{% static "image/israel.png" %}"> <span>히브리어</span>
+                {% elif voca_book.from_lang == 'hi-IN' %} <img src="{% static "image/india.png" %}"> <span>힌디어</span>
+                {% elif voca_book.from_lang == 'id-ID' %} <img src="{% static "image/indonesia.png" %}"> <span>인도네시아어</span>
+                {% elif voca_book.from_lang == 'th-TH' %} <img src="{% static "image/thailand.png" %}"> <span>태국어</span>
+                {% elif voca_book.from_lang == 'bn-BD' %} <img src="{% static "image/bangladesh.png" %}"> <span>벵골어</span>
+                {% elif voca_book.from_lang == 'tr-TR' %} <img src="{% static "image/turkey.png" %}"> <span>튀르키예어</span>
+                {% elif voca_book.from_lang == 'hu-HU' %} <img src="{% static "image/hungary.png" %}"> <span>헝가리어</span>
+                {% elif voca_book.from_lang == 'pl-PL' %} <img src="{% static "image/poland.png" %}"> <span>폴란드어</span>
+                {% elif voca_book.from_lang == 'cs-CZ' %} <img src="{% static "image/czech.png" %}"> <span>체코어</span>
+                {% elif voca_book.from_lang == 'sk-SK' %} <img src="{% static "image/slovakia.png" %}"> <span>슬로바키아어</span>
+                {% elif voca_book.from_lang == 'pt-PT' %} <img src="{% static "image/portugal.png" %}"> <span>포르투갈어</span>
+                {% elif voca_book.from_lang == 'ro-RO' %} <img src="{% static "image/romania.png" %}"> <span>루마니아어</span>
+                {% elif voca_book.from_lang == 'nl-NL' %} <img src="{% static "image/netherlands.png" %}"> <span>네덜란드어</span>
+                {% elif voca_book.from_lang == 'el-GR' %} <img src="{% static "image/greece.png" %}"> <span>그리스어</span>
+                {% elif voca_book.from_lang == 'da-DK' %} <img src="{% static "image/denmark.png" %}"> <span>덴마크어</span>
+                {% elif voca_book.from_lang == 'no-NO' %} <img src="{% static "image/norway.png" %}"> <span>노르웨이어</span>
+                {% elif voca_book.from_lang == 'sv-SE' %} <img src="{% static "image/sweden.png" %}"> <span>스웨덴어</span>
+                {% elif voca_book.from_lang == 'fi-FI' %} <img src="{% static "image/finland.png" %}"> <span>핀란드어</span>
+                {% endif %}
+            </div>
+        </div>
+        <div class="mean">
+            <span class="title">의미</span>
+            <div class="lang">
+                {% if voca_book.to_lang == 'ko-KR' %} <img src="{% static "image/korea.png" %}"> <span>한국어</span>
+                {% elif voca_book.to_lang == 'ja-JP' %} <img src="{% static "image/japan.png" %}"> <span>일본어</span>
+                {% elif voca_book.to_lang == 'zh-CN' %} <img src="{% static "image/china.png" %}"> <span>중국어</span>
+                {% elif voca_book.to_lang == 'en-US' %} <img src="{% static "image/usa.png" %}"> <span>영어</span>
+                {% elif voca_book.to_lang == 'es-ES' %} <img src="{% static "image/spain.png" %}"> <span>스페인어</span>
+                {% elif voca_book.to_lang == 'it-IT' %} <img src="{% static "image/italy.png" %}"> <span>이탈리아어</span>
+                {% elif voca_book.to_lang == 'fr-FR' %} <img src="{% static "image/france.png" %}"> <span>프랑스어</span>
+                {% elif voca_book.to_lang == 'de-DE' %} <img src="{% static "image/germany.png" %}"> <span>독일어</span>
+                {% elif voca_book.to_lang == 'ru-RU' %} <img src="{% static "image/russia.png" %}"> <span>러시아어</span>
+                {% elif voca_book.to_lang == 'ar-SA' %} <img src="{% static "image/saudi-arabia.png" %}"> <span>아랍어</span>
+                {% elif voca_book.to_lang == 'he-IL' %} <img src="{% static "image/israel.png" %}"> <span>히브리어</span>
+                {% elif voca_book.to_lang == 'hi-IN' %} <img src="{% static "image/india.png" %}"> <span>힌디어</span>
+                {% elif voca_book.to_lang == 'id-ID' %} <img src="{% static "image/indonesia.png" %}"> <span>인도네시아어</span>
+                {% elif voca_book.to_lang == 'th-TH' %} <img src="{% static "image/thailand.png" %}"> <span>태국어</span>
+                {% elif voca_book.to_lang == 'bn-BD' %} <img src="{% static "image/bangladesh.png" %}"> <span>벵골어</span>
+                {% elif voca_book.to_lang == 'tr-TR' %} <img src="{% static "image/turkey.png" %}"> <span>튀르키예어</span>
+                {% elif voca_book.to_lang == 'hu-HU' %} <img src="{% static "image/hungary.png" %}"> <span>헝가리어</span>
+                {% elif voca_book.to_lang == 'pl-PL' %} <img src="{% static "image/poland.png" %}"> <span>폴란드어</span>
+                {% elif voca_book.to_lang == 'cs-CZ' %} <img src="{% static "image/czech.png" %}"> <span>체코어</span>
+                {% elif voca_book.to_lang == 'sk-SK' %} <img src="{% static "image/slovakia.png" %}"> <span>슬로바키아어</span>
+                {% elif voca_book.to_lang == 'pt-PT' %} <img src="{% static "image/portugal.png" %}"> <span>포르투갈어</span>
+                {% elif voca_book.to_lang == 'ro-RO' %} <img src="{% static "image/romania.png" %}"> <span>루마니아어</span>
+                {% elif voca_book.to_lang == 'nl-NL' %} <img src="{% static "image/netherlands.png" %}"> <span>네덜란드어</span>
+                {% elif voca_book.to_lang == 'el-GR' %} <img src="{% static "image/greece.png" %}"> <span>그리스어</span>
+                {% elif voca_book.to_lang == 'da-DK' %} <img src="{% static "image/denmark.png" %}"> <span>덴마크어</span>
+                {% elif voca_book.to_lang == 'no-NO' %} <img src="{% static "image/norway.png" %}"> <span>노르웨이어</span>
+                {% elif voca_book.to_lang == 'sv-SE' %} <img src="{% static "image/sweden.png" %}"> <span>스웨덴어</span>
+                {% elif voca_book.to_lang == 'fi-FI' %} <img src="{% static "image/finland.png" %}"> <span>핀란드어</span>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+    <form id="word" class="form" method="post">
+        {% csrf_token %}
+        {% for form in forms %}
+        <div class="word-input">
+            <span class="num">{{ forloop.counter0|add:1 }}</span>
+            <div class="content">
+                <textarea name="content" placeholder="단어를 입력해주세요." rows="2">{{ form.content.value|default_if_none:'' }}</textarea>
+            </div>
+            <div class="mean">
+                <textarea name="mean" placeholder="의미를 입력해주세요." rows="2">{{ form.mean.value|default_if_none:'' }}</textarea>
+            </div>
+        </div>
+        {% endfor %}
+    </form>
+</div>
+{% endblock %}

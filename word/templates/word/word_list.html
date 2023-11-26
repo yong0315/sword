@@ -1,0 +1,190 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+<div class="center">
+    <div class="book-list">
+        {% if user.is_authenticated %}
+            {% if voca_book in user.voca_book_voter.all %}
+            <a href="{% url 'sword:voca_vote_cancel' voca_book.id %}">
+                <img src="{% static "image/star.png" %}">
+            </a>
+            {% else %}
+            <a href="{% url 'sword:voca_book_vote' voca_book.id %}">
+                <img src="{% static "image/empty.png" %}">
+            </a>
+            {% endif %}
+        {% endif %}
+        <div class="title">
+            <div class="lang">
+                {% if voca_book.from_lang == 'ko-KR' %} <img src="{% static "image/korea.png" %}">
+                {% elif voca_book.from_lang == 'ja-JP' %} <img src="{% static "image/japan.png" %}">
+                {% elif voca_book.from_lang == 'zh-CN' %} <img src="{% static "image/china.png" %}">
+                {% elif voca_book.from_lang == 'en-US' %} <img src="{% static "image/usa.png" %}">
+                {% elif voca_book.from_lang == 'es-ES' %} <img src="{% static "image/spain.png" %}">
+                {% elif voca_book.from_lang == 'it-IT' %} <img src="{% static "image/italy.png" %}">
+                {% elif voca_book.from_lang == 'fr-FR' %} <img src="{% static "image/france.png" %}">
+                {% elif voca_book.from_lang == 'de-DE' %} <img src="{% static "image/germany.png" %}">
+                {% elif voca_book.from_lang == 'ru-RU' %} <img src="{% static "image/russia.png" %}">
+                {% elif voca_book.from_lang == 'ar-SA' %} <img src="{% static "image/saudi-arabia.png" %}">
+                {% elif voca_book.from_lang == 'he-IL' %} <img src="{% static "image/israel.png" %}">
+                {% elif voca_book.from_lang == 'hi-IN' %} <img src="{% static "image/india.png" %}">
+                {% elif voca_book.from_lang == 'id-ID' %} <img src="{% static "image/indonesia.png" %}">
+                {% elif voca_book.from_lang == 'th-TH' %} <img src="{% static "image/thailand.png" %}">
+                {% elif voca_book.from_lang == 'bn-BD' %} <img src="{% static "image/bangladesh.png" %}">
+                {% elif voca_book.from_lang == 'tr-TR' %} <img src="{% static "image/turkey.png" %}">
+                {% elif voca_book.from_lang == 'hu-HU' %} <img src="{% static "image/hungary.png" %}">
+                {% elif voca_book.from_lang == 'pl-PL' %} <img src="{% static "image/poland.png" %}">
+                {% elif voca_book.from_lang == 'cs-CZ' %} <img src="{% static "image/czech.png" %}">
+                {% elif voca_book.from_lang == 'sk-SK' %} <img src="{% static "image/slovakia.png" %}">
+                {% elif voca_book.from_lang == 'pt-PT' %} <img src="{% static "image/portugal.png" %}">
+                {% elif voca_book.from_lang == 'ro-RO' %} <img src="{% static "image/romania.png" %}">
+                {% elif voca_book.from_lang == 'nl-NL' %} <img src="{% static "image/netherlands.png" %}">
+                {% elif voca_book.from_lang == 'el-GR' %} <img src="{% static "image/greece.png" %}">
+                {% elif voca_book.from_lang == 'da-DK' %} <img src="{% static "image/denmark.png" %}">
+                {% elif voca_book.from_lang == 'no-NO' %} <img src="{% static "image/norway.png" %}">
+                {% elif voca_book.from_lang == 'sv-SE' %} <img src="{% static "image/sweden.png" %}">
+                {% elif voca_book.from_lang == 'fi-FI' %} <img src="{% static "image/finland.png" %}">
+                {% endif %}
+                <img class="arrow" src="{% static "image/right-arrow.png" %}">
+                {% if voca_book.to_lang == 'ko-KR' %} <img src="{% static "image/korea.png" %}">
+                {% elif voca_book.to_lang == 'ja-JP' %} <img src="{% static "image/japan.png" %}">
+                {% elif voca_book.to_lang == 'zh-CN' %} <img src="{% static "image/china.png" %}">
+                {% elif voca_book.to_lang == 'en-US' %} <img src="{% static "image/usa.png" %}">
+                {% elif voca_book.to_lang == 'es-ES' %} <img src="{% static "image/spain.png" %}">
+                {% elif voca_book.to_lang == 'it-IT' %} <img src="{% static "image/italy.png" %}">
+                {% elif voca_book.to_lang == 'fr-FR' %} <img src="{% static "image/france.png" %}">
+                {% elif voca_book.to_lang == 'de-DE' %} <img src="{% static "image/germany.png" %}">
+                {% elif voca_book.to_lang == 'ru-RU' %} <img src="{% static "image/russia.png" %}">
+                {% elif voca_book.to_lang == 'ar-SA' %} <img src="{% static "image/saudi-arabia.png" %}">
+                {% elif voca_book.to_lang == 'he-IL' %} <img src="{% static "image/israel.png" %}">
+                {% elif voca_book.to_lang == 'hi-IN' %} <img src="{% static "image/india.png" %}">
+                {% elif voca_book.to_lang == 'id-ID' %} <img src="{% static "image/indonesia.png" %}">
+                {% elif voca_book.to_lang == 'th-TH' %} <img src="{% static "image/thailand.png" %}">
+                {% elif voca_book.to_lang == 'bn-BD' %} <img src="{% static "image/bangladesh.png" %}">
+                {% elif voca_book.to_lang == 'tr-TR' %} <img src="{% static "image/turkey.png" %}">
+                {% elif voca_book.to_lang == 'hu-HU' %} <img src="{% static "image/hungary.png" %}">
+                {% elif voca_book.to_lang == 'pl-PL' %} <img src="{% static "image/poland.png" %}">
+                {% elif voca_book.to_lang == 'cs-CZ' %} <img src="{% static "image/czech.png" %}">
+                {% elif voca_book.to_lang == 'sk-SK' %} <img src="{% static "image/slovakia.png" %}">
+                {% elif voca_book.to_lang == 'pt-PT' %} <img src="{% static "image/portugal.png" %}">
+                {% elif voca_book.to_lang == 'ro-RO' %} <img src="{% static "image/romania.png" %}">
+                {% elif voca_book.to_lang == 'nl-NL' %} <img src="{% static "image/netherlands.png" %}">
+                {% elif voca_book.to_lang == 'el-GR' %} <img src="{% static "image/greece.png" %}">
+                {% elif voca_book.to_lang == 'da-DK' %} <img src="{% static "image/denmark.png" %}">
+                {% elif voca_book.to_lang == 'no-NO' %} <img src="{% static "image/norway.png" %}">
+                {% elif voca_book.to_lang == 'sv-SE' %} <img src="{% static "image/sweden.png" %}">
+                {% elif voca_book.to_lang == 'fi-FI' %} <img src="{% static "image/finland.png" %}">
+                {% endif %}
+            </div>
+            <a href="{% url 'sword:detail' voca_book.id %}">{{ voca_book.title }}</a>
+        </div>
+        <div class="sub">
+            <p>
+                <span class="title">작성자</span>
+                <span class="data">{{ voca_book.author.username }}</span>
+            </p>
+            <p>
+                <span class="title">단어</span>
+                <span class="data">{{ voca_book.word_set.count }}</span>
+            </p>
+            <p>
+                <span class="title">조회수</span>
+                <span class="data">{{ voca_book.view }}</span>
+            </p>
+            <p>
+                <span class="title">즐겨찾기</span>
+                <span class="data">{{ voca_book.voter.count }}</span>
+            </p>
+        </div>
+        <div class="sub" style="margin-top: 0.3em;">
+            <p>
+                <span class="title">작성일</span>
+                <span class="data">{{ voca_book.create_date }}</span>
+            </p>
+            <p>
+                <span class="title">수정일</span>
+                <span class="data">{{ voca_book.modify_date }}</span>
+            </p>
+        </div>
+        {% if request.user == voca_book.author %}
+        <div class="buttons">
+            <a href="{% url 'sword:voca_book_modify' voca_book.id  %}">
+                <img src="{% static "image/setting.png" %}">
+                설정 편집
+            </a>
+            <a href="{% url 'sword:words_modify' voca_book.id  %}">
+                <img src="{% static "image/edit.png" %}">
+                단어 편집
+            </a>
+            <a href="javascript:void(0)" class="delete" data-uri="{% url 'sword:voca_book_delete' voca_book.id  %}">
+                <img src="{% static "image/delete.png" %}">
+                단어장 삭제
+            </a>
+        </div>
+        {% endif %}
+    </div>
+    <div>
+        <div class="word-list word-title">
+            <span>단어 목록</span>
+            {% if user.is_authenticated %}
+            <select onchange="HideList(this.value);">
+                <option value="all">전체 단어</option>
+                <option value="mark">중요한 단어</option>
+            </select>
+            {% endif %}
+        </div>
+        <div class="word-all">
+            {% if word_list %}
+                {% for word in word_list %}
+                <div class="word-list">
+                    <div class="content">{{ word.content }}</div>
+                    <div class="mean">{{ word.mean }}</div>
+                    {% if user.is_authenticated %}
+                        {% if word in user.word_voter.all %}
+                        <a href="{% url 'sword:word_vote_cancel' word.id %}">
+                            <img src="{% static "image/star.png" %}">
+                        </a>
+                        {% else %}
+                        <a href="{% url 'sword:word_vote' word.id %}">
+                            <img src="{% static "image/empty.png" %}">
+                        </a>
+                        {% endif %}
+                    {% endif %}
+                    <img src="{% static "image/speak.png" %}" onclick="speech('{{ word.content }}', '{{ voca_book.from_lang }}');"/>
+                </div>
+                {% endfor %}
+            {% else %}
+            <div class="word-list not-word-exist">
+                단어가 존재하지 않습니다.
+            </div>
+            {% endif %}
+        </div>
+        <div class="word-mark" style="display: none;">
+            {% if word_mark %}
+                {% for word in word_mark %}
+                <div class="word-list">
+                    <div class="content">{{ word.content }}</div>
+                    <div class="mean">{{ word.mean }}</div>
+                    {% if user.is_authenticated %}
+                        {% if word in user.word_voter.all %}
+                        <a href="{% url 'sword:word_vote_cancel' word.id %}">
+                            <img src="{% static "image/star.png" %}">
+                        </a>
+                        {% else %}
+                        <a href="{% url 'sword:word_vote' word.id %}">
+                            <img src="{% static "image/empty.png" %}">
+                        </a>
+                        {% endif %}
+                    {% endif %}
+                    <img src="{% static "image/speak.png" %}" onclick="speech('{{ word.content }}', '{{ voca_book.from_lang }}');"/>
+                </div>
+                {% endfor %}
+            {% else %}
+            <div class="word-list not-word-exist">
+                중요 표시된 단어가 존재하지 않습니다.
+            </div>
+            {% endif %}
+        </div>
+    </div>
+</div>
+{% endblock %}
